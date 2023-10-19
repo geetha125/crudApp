@@ -1,0 +1,40 @@
+<center>
+<h1> New Employee </h1>
+<%= form_with model: @student do |form| %>
+
+<div>
+  <h2><%= form.label :first_name %></h2> <br>
+  <%= form.text_field :first_name %>
+</div>
+<div>
+  <h2><%= form.label :last_name %></h2> <br>
+  <%= form.text_field :last_name %>
+</div>
+<div>
+  <h2><%= form.label :roll_num %> </h2><br>
+  <%= form.number_field :roll_num %>
+</div>
+<div>
+  <h2><%= form.label :age %></h2> <br>
+  <%= form.number_field :age %>
+</div>
+<div>
+  <h2><%= form.label :father_name %> </h2><br>
+  <%= form.text_field :father_name %>
+</div>   
+<br>
+<div> 
+    <h2>
+  <%= form.submit %></h2>
+</div>   
+<% end %>
+
+<% if @student.errors.any? %>
+  <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>  
+</center>
+

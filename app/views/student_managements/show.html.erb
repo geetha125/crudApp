@@ -1,0 +1,15 @@
+<center>
+<h1>Student Details</h1>
+<p><strong> First_Name:</strong><%= @student.first_name %></p>
+<p><strong> Last_Name:</strong><%= @student.last_name %></p>  
+<%= link_to 'BACK',student_managements_path %>  
+<%= link_to 'UPDATE',edit_student_management_path(@student)%> 
+
+<% if eligible_for_program?(@student.age) %>
+  <p>This student is eligible for the program.</p>
+<% else %>
+  <p>This student is not eligible for the program.</p>
+<% end %>
+
+
+</center>

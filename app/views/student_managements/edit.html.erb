@@ -1,0 +1,37 @@
+<center><h1> Edit DETAILS  </h1>
+<%= form_with model: @student do |form| %>
+
+<div>
+  <%= form.label :first_name %> <br>
+  <%= form.text_field :first_name %>
+</div>
+<div>
+  <%= form.label :last_name %> <br>
+  <%= form.text_field :last_name %>
+</div>
+<div>
+  <%= form.label :roll_num %> <br>
+  <%= form.number_field :roll_num %>
+</div>
+<div>
+  <%= form.label :age ,style: "color:blue"%> <br>
+  <%= form.number_field :age %>
+</div>
+<div>
+  <%= form.label :father_name %> <br>
+  <%= form.text_field :father_name %>
+</div>   
+<br>
+<div>
+  <%= form.submit %>
+</div>   
+<% end %>
+
+<% if @student.errors.any? %>
+  <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>  
+<% end %>  
+</center>
